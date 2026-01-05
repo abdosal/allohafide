@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Allo Hafid - Restaurant Fast-Food #1 à Casablanca. Tacos, pizzas, burgers et plus encore.">
+    <title>Allo Hafid | Restaurant Fast-Food Casablanca</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="css/output.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-primary text-white">
+    
+    <!-- Navigation 3D avec Switcher de langue -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="glass">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-24">
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center hover:scale-110 transition-transform duration-300">
+                        <img src="assets/images/logo.png" 
+                             alt="Allo Hafid Restaurant" 
+                             class="h-20 sm:h-24 md:h-28 w-auto drop-shadow-2xl">
+                    </a>
+                    
+                    <!-- Menu Desktop -->
+                    <ul class="hidden lg:flex items-center space-x-8">
+                        <li><a href="index.html" class="nav-link text-accent" data-i18n="nav_accueil">Accueil</a></li>
+                        <li><a href="#apropos" class="nav-link" data-i18n="nav_apropos">À propos</a></li>
+                        <li><a href="galerie.html" class="nav-link" data-i18n="nav_galerie">Galerie</a></li>
+                        <li><a href="menu.html" class="nav-link" data-i18n="nav_menu">Menu</a></li>
+                        <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                        
+                        <!-- Language Switcher Desktop -->
+                        <li class="flex items-center gap-2 glass rounded-full px-3 py-2">
+                            <button class="lang-btn active w-10 h-10 rounded-full flex items-center justify-center hover:bg-accent/20 transition-all font-bold text-sm" data-lang="fr">
+                                FR
+                            </button>
+                            <div class="w-px h-6 bg-white/20"></div>
+                            <button class="lang-btn w-10 h-10 rounded-full flex items-center justify-center hover:bg-accent/20 transition-all font-bold text-sm" data-lang="ar">
+                                ع
+                            </button>
+                        </li>
+                        
+                        <li>
+                            <a href="tel:+212635697379" class="btn-primary text-sm px-6 py-2">
+                                <i class="fas fa-phone mr-2"></i>
+                                <span data-i18n="nav_commander">Commander</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Burger Menu -->
+                    <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-accent transition-colors">
+                        <i class="fas fa-bars text-3xl"></i>
+                    </button>
+                </div>
+
+                <!-- Menu Mobile -->
+                <div id="mobile-menu" class="hidden lg:hidden pb-6 pt-2">
+                    <ul class="flex flex-col space-y-4">
+                        <li><a href="index.html" class="block py-3 text-accent font-semibold text-lg border-b border-white/10" data-i18n="nav_accueil">Accueil</a></li>
+                        <li><a href="#apropos" class="block py-3 hover:text-accent transition-colors text-lg border-b border-white/10" data-i18n="nav_apropos">À propos</a></li>
+                        <li><a href="galerie.html" class="block py-3 hover:text-accent transition-colors text-lg border-b border-white/10" data-i18n="nav_galerie">Galerie</a></li>
+                        <li><a href="menu.html" class="block py-3 hover:text-accent transition-colors text-lg border-b border-white/10" data-i18n="nav_menu">Menu</a></li>
+                        <li><a href="#contact" class="block py-3 hover:text-accent transition-colors text-lg border-b border-white/10" data-i18n="nav_contact">Contact</a></li>
+                        
+                        <!-- Language Switcher Mobile -->
+                        <li class="flex items-center justify-center gap-3 py-3 border-b border-white/10">
+                            <button class="lang-btn active px-6 py-2 rounded-full glass hover:bg-accent/20 transition-all font-bold" data-lang="fr">
+                                Français
+                            </button>
+                            <button class="lang-btn px-6 py-2 rounded-full glass hover:bg-accent/20 transition-all font-bold" data-lang="ar">
+                                العربية
+                            </button>
+                        </li>
+                        
+                        <li class="pt-2">
+                            <a href="tel:+212635697379" class="btn-primary w-full">
+                                <i class="fas fa-phone mr-2"></i>
+                                <span data-i18n="nav_commander">Commander</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Ultra Moderne -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background Animé -->
+        <div class="absolute inset-0 bg-animated">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent-orange/20 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-yellow/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+        </div>
+
+        <!-- Contenu Hero -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-6xl mx-auto">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-6 py-3 rounded-full glass mb-8 animate-slide-up">
+                    <i class="fas fa-fire text-accent mr-3 text-xl"></i>
+                    <span class="text-sm font-semibold" data-i18n="hero_badge">Restaurant #1 à Casablanca</span>
+                </div>
+
+                <!-- Titre Principal -->
+                <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-8 leading-none animate-slide-up" style="animation-delay: 0.1s;">
+                    <span class="gradient-text" data-i18n="hero_title">Allo Hafid</span>
+                </h1>
+                
+                <p class="text-2xl sm:text-3xl md:text-4xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;" data-i18n="hero_subtitle">
+                    Des <span class="text-accent-yellow font-bold">saveurs</span> explosives et des <span class="text-accent-orange font-bold">plats</span> qui enflamment vos papilles ! 🔥
+                </p>
+
+                <!-- Boutons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up" style="animation-delay: 0.3s;">
+                    <a href="menu.html" class="btn-primary text-xl px-12 py-5 w-full sm:w-auto">
+                        <i class="fas fa-utensils mr-3"></i>
+                        <span data-i18n="hero_btn_menu">Voir le Menu</span>
+                    </a>
+                    <a href="galerie.html" class="btn-secondary text-xl px-12 py-5 w-full sm:w-auto">
+                        <i class="fas fa-images mr-3"></i>
+                        <span data-i18n="hero_btn_galerie">Galerie Photos</span>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 max-w-3xl mx-auto mt-20 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="glass rounded-2xl p-6 hover:glow-box transition-all duration-300">
+                        <p class="text-4xl md:text-5xl font-black gradient-text mb-2">5000+</p>
+                        <p class="text-sm md:text-base text-gray-400" data-i18n="hero_stats_clients">Clients satisfaits</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 hover:glow-box transition-all duration-300">
+                        <p class="text-4xl md:text-5xl font-black gradient-text mb-2">15+</p>
+                        <p class="text-sm md:text-base text-gray-400" data-i18n="hero_stats_plats">Plats au menu</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 hover:glow-box transition-all duration-300">
+                        <p class="text-4xl md:text-5xl font-black gradient-text mb-2">⭐ 4.9</p>
+                        <p class="text-sm md:text-base text-gray-400" data-i18n="hero_stats_note">Note moyenne</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#apropos" class="flex flex-col items-center gap-2 text-accent hover:text-accent-orange transition-colors">
+                <span class="text-sm font-semibold" data-i18n="hero_scroll">Découvrir</span>
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section À propos Moderne -->
+    <section id="apropos" class="py-24 md:py-32 bg-animated relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image 3D -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-fire rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-3d group-hover:shadow-3d-hover transition-all duration-500">
+                        <img src="assets/images/about.jpg" 
+                             alt="Restaurant Allo Hafid" 
+                             class="w-full h-[500px] lg:h-[700px] object-cover transform group-hover:scale-110 transition-transform duration-700"
+                             onerror="this.parentElement.innerHTML='<div class=\'w-full h-[500px] lg:h-[700px] bg-gradient-fire flex items-center justify-center rounded-3xl\'><i class=\'fas fa-store text-white text-9xl opacity-50\'></i></div>';">
+                    </div>
+                    
+                    <!-- Badge Flottant -->
+                    <div class="absolute -bottom-8 -left-8 glass rounded-3xl p-8 shadow-3d animate-float">
+                        <p class="text-6xl font-black gradient-text mb-2">5+</p>
+                        <p class="text-lg font-bold" data-i18n="about_badge_years">Années<br>d'excellence</p>
+                    </div>
+                </div>
+
+                <!-- Contenu -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="inline-block px-6 py-2 rounded-full bg-accent/10 text-accent font-bold mb-4" data-i18n="about_badge">
+                            À PROPOS DE NOUS
+                        </span>
+                        <h2 class="section-title" data-i18n="about_title">
+                            L'expérience <span class="gradient-text">Fast-Food</span><br>
+                            réinventée
+                        </h2>
+                    </div>
+
+                    <p class="text-xl text-gray-300 leading-relaxed" data-i18n="about_text1">
+                        Chez <span class="text-accent-yellow font-bold">Allo Hafid</span>, nous avons révolutionné le fast-food à Casablanca. Chaque plat est une explosion de saveurs préparé avec passion et des ingrédients de première qualité.
+                    </p>
+
+                    <p class="text-xl text-gray-300 leading-relaxed" data-i18n="about_text2">
+                        Notre mission ? Vous offrir une expérience culinaire inoubliable à des prix imbattables, dans une ambiance énergique et conviviale.
+                    </p>
+
+                    <!-- Valeurs en Cards 3D -->
+                    <div class="grid grid-cols-3 gap-4 pt-4">
+                        <div class="glass rounded-2xl p-6 text-center hover:glow-box transition-all duration-300 group">
+                            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-fire flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-bolt text-white text-3xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-1" data-i18n="about_card1_title">Rapidité</h3>
+                            <p class="text-sm text-gray-400" data-i18n="about_card1_text">Service ultra-rapide</p>
+                        </div>
+
+                        <div class="glass rounded-2xl p-6 text-center hover:glow-box transition-all duration-300 group">
+                            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-fire flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-star text-white text-3xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-1" data-i18n="about_card2_title">Qualité</h3>
+                            <p class="text-sm text-gray-400" data-i18n="about_card2_text">100% frais</p>
+                        </div>
+
+                        <div class="glass rounded-2xl p-6 text-center hover:glow-box transition-all duration-300 group">
+                            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-fire flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-fire text-white text-3xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-1" data-i18n="about_card3_title">Passion</h3>
+                            <p class="text-sm text-gray-400" data-i18n="about_card3_text">Fait avec amour</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spécialités Ultra Modernes -->
+    <section class="py-24 md:py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-primary-light"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-6 py-2 rounded-full bg-accent/10 text-accent font-bold mb-4" data-i18n="specialites_badge">
+                    NOS BEST-SELLERS
+                </span>
+                <h2 class="section-title" data-i18n="specialites_title">
+                    Nos <span class="gradient-text">Spécialités</span> qui<br>
+                    enflamment vos papilles 🔥
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto mt-6" data-i18n="specialites_subtitle">
+                    Découvrez nos créations les plus populaires
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Card Tacos 3D -->
+                <div class="card-3d group">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="assets/images/plats/tacos.jpg" 
+                             alt="Tacos Français" 
+                             class="w-full h-full object-cover transform group-hover:scale-125 transition-transform duration-700"
+                             onerror="this.parentElement.innerHTML='<div class=\'h-80 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center\'><i class=\'fas fa-burger text-white text-9xl opacity-50\'></i></div>';">
+                        <div class="absolute top-4 right-4">
+                            <span class="px-4 py-2 rounded-full bg-accent text-white text-sm font-bold shadow-3d" data-i18n="badge_bestseller">
+                                🔥 Best-Seller
+                            </span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-black mb-3 group-hover:text-accent transition-colors" data-i18n="tacos_title">Tacos Français</h3>
+                        <p class="text-gray-600 mb-4 text-lg" data-i18n="tacos_desc">Généreux, savoureux et irrésistible</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-4xl font-black gradient-text">25 DH</span>
+                            <a href="menu.html" class="px-6 py-3 rounded-full bg-gradient-fire text-white font-bold hover:shadow-3d transition-all">
+                                <span data-i18n="btn_commander">Commander</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Pizza 3D -->
+                <div class="card-3d group">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="assets/images/plats/pizza.jpg" 
+                             alt="Pizza" 
+                             class="w-full h-full object-cover transform group-hover:scale-125 transition-transform duration-700"
+                             onerror="this.parentElement.innerHTML='<div class=\'h-80 bg-gradient-to-br from-red-500 to-yellow-500 flex items-center justify-center\'><i class=\'fas fa-pizza-slice text-white text-9xl opacity-50\'></i></div>';">
+                        <div class="absolute top-4 right-4">
+                            <span class="px-4 py-2 rounded-full bg-accent-orange text-white text-sm font-bold shadow-3d" data-i18n="badge_toprated">
+                                ⭐ Top Rated
+                            </span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-black mb-3 group-hover:text-accent transition-colors" data-i18n="pizza_title">Pizza Artisanale</h3>
+                        <p class="text-gray-600 mb-4 text-lg" data-i18n="pizza_desc">Pâte fraîche, garniture premium</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-4xl font-black gradient-text">40 DH</span>
+                            <a href="menu.html" class="px-6 py-3 rounded-full bg-gradient-fire text-white font-bold hover:shadow-3d transition-all">
+                                <span data-i18n="btn_commander">Commander</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Sandwich 3D -->
+                <div class="card-3d group">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="assets/images/plats/sandwich.jpg" 
+                             alt="Sandwich" 
+                             class="w-full h-full object-cover transform group-hover:scale-125 transition-transform duration-700"
+                             onerror="this.parentElement.innerHTML='<div class=\'h-80 bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center\'><i class=\'fas fa-bread-slice text-white text-9xl opacity-50\'></i></div>';">
+                        <div class="absolute top-4 right-4">
+                            <span class="px-4 py-2 rounded-full bg-accent-yellow text-primary text-sm font-bold shadow-3d" data-i18n="badge_rapide">
+                                ⚡ Rapide
+                            </span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-black mb-3 group-hover:text-accent transition-colors" data-i18n="sandwich_title">Sandwiches</h3>
+                        <p class="text-gray-600 mb-4 text-lg" data-i18n="sandwich_desc">Frais, copieux et délicieux</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-4xl font-black gradient-text">20 DH</span>
+                            <a href="menu.html" class="px-6 py-3 rounded-full bg-gradient-fire text-white font-bold hover:shadow-3d transition-all">
+                                <span data-i18n="btn_commander">Commander</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="menu.html" class="btn-primary text-xl px-12 py-5 inline-flex items-center">
+                    <span data-i18n="specialites_btn">Découvrir tout le menu</span>
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-fire opacity-10"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <i class="fas fa-phone-volume text-7xl gradient-text mb-8 animate-bounce-slow"></i>
+                <h2 class="text-5xl md:text-6xl font-black mb-6" data-i18n="cta_title">
+                    Prêt à commander ? 📞
+                </h2>
+                <p class="text-2xl text-gray-300 mb-12" data-i18n="cta_subtitle">
+                    Appelez-nous maintenant ou commandez via WhatsApp
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="tel:+212635697379" class="btn-primary text-xl px-12 py-5">
+                        <i class="fas fa-phone mr-3"></i>
+                        <span data-i18n="cta_btn_appeler">Appeler maintenant</span>
+                    </a>
+                    <a href="https://wa.me/212635697379?text=Bonjour%20Allo%20Hafid,%20je%20voudrais%20commander" target="_blank" class="px-12 py-5 rounded-full text-xl font-bold bg-green-500 hover:bg-green-600 text-white shadow-3d hover:shadow-3d-hover transition-all inline-flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-3"></i>
+                        <span data-i18n="cta_btn_whatsapp">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Moderne -->
+    <footer id="contact" class="bg-primary-dark pt-20 pb-8 relative">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent-orange rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 mb-16">
+                <!-- Contact -->
+                <div>
+                    <img src="assets/images/logo.png" alt="Allo Hafid" class="h-24 w-auto mb-8 drop-shadow-2xl">
+                    
+                    <p class="text-xl text-gray-400 mb-8" data-i18n="footer_description">
+                        Votre destination #1 pour le fast-food à Casablanca
+                    </p>
+
+                    <div class="space-y-6">
+                        <a href="tel:+212635697379" class="flex items-center gap-4 text-lg hover:text-accent transition-colors group">
+                            <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                <i class="fas fa-phone text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold" data-i18n="footer_telephone">Téléphone</p>
+                                <p class="text-gray-400">+212 635 697 379</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:contact@allohafid.ma" class="flex items-center gap-4 text-lg hover:text-accent transition-colors group">
+                            <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                <i class="fas fa-envelope text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold" data-i18n="footer_email">Email</p>
+                                <p class="text-gray-400">contact@allohafid.ma</p>
+                            </div>
+                        </a>
+
+                        <div class="flex items-start gap-4 text-lg">
+                            <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold" data-i18n="footer_adresse">Adresse</p>
+                                <p class="text-gray-400" data-i18n="footer_adresse_text">123 Boulevard Mohammed V<br>Casablanca, Maroc</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 text-lg">
+                            <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center">
+                                <i class="fas fa-clock text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold" data-i18n="footer_horaires">Horaires</p>
+                                <p class="text-gray-400" data-i18n="footer_horaires_text">Tous les jours : 11h - 00h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Réseaux Sociaux -->
+                    <div class="flex gap-4 mt-8">
+                        <a href="#" class="w-14 h-14 rounded-2xl bg-gradient-fire flex items-center justify-center hover:scale-110 hover:shadow-glow transition-all">
+                            <i class="fab fa-facebook text-white text-2xl"></i>
+                        </a>
+                        <a href="#" class="w-14 h-14 rounded-2xl bg-gradient-fire flex items-center justify-center hover:scale-110 hover:shadow-glow transition-all">
+                            <i class="fab fa-instagram text-white text-2xl"></i>
+                        </a>
+                        <a href="#" class="w-14 h-14 rounded-2xl bg-gradient-fire flex items-center justify-center hover:scale-110 hover:shadow-glow transition-all">
+                            <i class="fab fa-tiktok text-white text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+               <div class="rounded-3xl overflow-hidden shadow-3d h-96 md:h-full">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3324.5718822354634!2d-7.594420024304312!3d33.564497973344515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDMzJzUyLjIiTiA3wrAzNSczMC42Ilc!5e0!3m2!1sfr!2sma!4v1767651182820!5m2!1sfr!2sma" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-gray-400" data-i18n="footer_copyright">
+                    &copy; 2026 <span class="gradient-text font-bold">Allo Hafid</span>. Tous droits réservés. Fait avec <span class="text-accent">❤️</span> à Casablanca.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flottant -->
+    <a href="https://wa.me/212635697379?text=Bonjour%20Allo%20Hafid,%20je%20voudrais%20commander" 
+       target="_blank"
+       class="fixed bottom-8 right-8 w-20 h-20 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-3d hover:shadow-3d-hover transition-all z-50 group animate-bounce-slow"
+       aria-label="WhatsApp">
+        <i class="fab fa-whatsapp text-white text-4xl group-hover:rotate-12 transition-transform"></i>
+        <span class="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-ping"></span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

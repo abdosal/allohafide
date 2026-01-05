@@ -1,0 +1,19 @@
+{
+  "name": "allo-hafid",
+  "version": "1.0.0",
+  "description": "Site web restaurant Allo Hafid",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./css/output.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./css/output.css --minify"
+  },
+  "keywords": [
+    "restaurant",
+    "tailwind",
+    "moroccan"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
