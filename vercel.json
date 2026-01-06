@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "buildCommand": "npx tailwindcss -i ./src/input.css -o ./css/output.css --minify",
+  "outputDirectory": ".",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
